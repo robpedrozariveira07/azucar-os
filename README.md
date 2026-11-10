@@ -6,7 +6,8 @@ Sistema de gestión para Azúcar Dance Studio: membresías, acceso facial y torn
 
 **Fase 0 · Prototipo navegable.** Un solo archivo HTML con datos de ejemplo para validar pantallas y flujos antes de construir el sistema real.
 
-- `prototipo/index.html` — ábrelo en el navegador. Arriba a la izquierda, "Entrar como" cambia entre perfil de Socio, Staff y Profesor.
+- `prototipo/index.html` — ábrelo en el navegador e inicia sesión con una de las cuentas de prueba (contraseña `demo2026`). Cada perfil ve solo lo que le corresponde.
+- El inicio de sesión del prototipo es una simulación: no protege nada. En el sistema real las contraseñas se guardan cifradas en el servidor, con recuperación por correo y bloqueo por intentos fallidos.
 - Los alumnos del prototipo son ficticios. Los precios y reglas vienen de los flyers ADS 2026.
 - La identidad visual sigue el Manual de marca v1.0 (octubre 2026).
 
@@ -17,6 +18,7 @@ Sistema de gestión para Azúcar Dance Studio: membresías, acceso facial y torn
 | Socio / Dirección | Todo: dashboard, finanzas, marketing, CRM, staff, configuración |
 | Staff · Recepción | Su turno y corte de caja, ventas del día, check-in, alumnos e historial de membresía, agenda, punto de venta, CRM. Sin KPIs financieros |
 | Profesor | Su agenda, lista de asistencia (solo nombres), sus calificaciones y videos de capacitación |
+| Alumno | La app: pase de acceso, pago, reservas, calificar clases y suscripción de videos |
 
 ## Plan
 
