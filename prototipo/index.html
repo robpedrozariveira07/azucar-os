@@ -5,32 +5,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <style>
-/* Manual de marca Azúcar v1.0: carbón (rail), crema (fondo), guayaba solo como acento (estrella, acción principal); Outfit Black + Instrument Sans; corte de 16° en botones de acción */
+/* Manual de marca Azúcar v1.0, versión clara para trabajo diario: blanco, carbón para texto, guayaba solo como acento; Outfit Black + Instrument Sans; corte de 16° en botones de acción. Siempre en modo claro (más descansado para la vista). */
 :root{
-  --bg:#F4EFE6; --surface:#FFFDF9; --surface2:#EFE8DC; --ink:#141414; --muted:#6A635A; --line:#E2D9CA;
-  --rail:#141414; --rail-ink:#F4EFE6; --rail-muted:#A69E92;
-  --accent:#F2545B; --accent-ink:#141414; --sugar:#E8DCC6; --sugar-ink:#141414;
-  --ok:#11845B; --ok-bg:#DFF1E6; --warn:#A35F00; --warn-bg:#FBEBCF; --bad:#C42A33; --bad-bg:#FBE0DF; --info:#2E4A9E; --info-bg:#E2E8F6;
+  color-scheme:light;
+  --bg:#F7F6F3; --surface:#FFFFFF; --surface2:#F4F2EE; --ink:#141414; --muted:#6A665F; --line:#E6E2DA;
+  --rail:#FFFFFF; --rail-ink:#141414; --rail-muted:#7A746B; --rail-hover:#F4EFE6; --rail-line:#E6E2DA;
+  --accent:#F2545B; --accent-ink:#141414; --accent-soft:#FDE7E8; --sugar:#F4EFE6; --sugar-ink:#141414;
+  --ok:#11845B; --ok-bg:#DFF1E6; --warn:#A35F00; --warn-bg:#FBEBCF; --bad:#C42A33; --bad-bg:#FBE0DF; --info:#2E4A9E; --info-bg:#E8EDF8;
   --display:"Outfit","Arial Black",system-ui,sans-serif;
   --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --r:10px;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#141414; --surface:#1E1D1B; --surface2:#262421; --ink:#F4EFE6; --muted:#A69E92; --line:#35322D;
-  --rail:#0B0B0B; --rail-ink:#F4EFE6; --rail-muted:#8F887D;
-  --accent:#F2545B; --accent-ink:#141414; --sugar:#3A342B; --sugar-ink:#F4EFE6; --ok:#4FD39C; --ok-bg:#12301F; --warn:#FFB65C; --warn-bg:#372A12; --bad:#FF767B; --bad-bg:#3B1719; --info:#9DB2F2; --info-bg:#1E2638;
-  color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#141414; --surface:#1E1D1B; --surface2:#262421; --ink:#F4EFE6; --muted:#A69E92; --line:#35322D;
-  --rail:#0B0B0B; --rail-ink:#F4EFE6; --rail-muted:#8F887D;
-  --accent:#F2545B; --accent-ink:#141414; --sugar:#3A342B; --sugar-ink:#F4EFE6; --ok:#4FD39C; --ok-bg:#12301F; --warn:#FFB65C; --warn-bg:#372A12; --bad:#FF767B; --bad-bg:#3B1719; --info:#9DB2F2; --info-bg:#1E2638;
-  color-scheme:dark}
 *{box-sizing:border-box}
 html,body{height:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.45}
 button,input,select,textarea{font:inherit;color:inherit}
 .app{display:grid;grid-template-columns:232px 1fr;min-height:100%}
-.rail{background:var(--rail);color:var(--rail-ink);padding-block:18px;padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:14px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.rail{background:var(--rail);color:var(--rail-ink);border-right:1px solid var(--rail-line);padding-block:18px;padding-left:max(14px,env(safe-area-inset-left,0px));padding-right:14px;position:sticky;top:0;height:100vh;overflow-y:auto}
 .brand{display:flex;align-items:center;gap:10px;padding:8px 6px 16px}
 .wm{font-family:var(--display);font-weight:900;font-size:30px;line-height:1;letter-spacing:-.03em;color:var(--rail-ink);white-space:nowrap}
 .wm .tu{position:relative;display:inline-block}
@@ -39,8 +30,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 .desc small{display:block;color:var(--rail-muted);letter-spacing:.12em;font-weight:600;font-size:9px;margin-top:2px}
 .navgrp{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--rail-muted);margin:14px 8px 6px}
 .nav a{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;color:var(--rail-ink);text-decoration:none;font-weight:500}
-.nav a:hover{background:rgba(255,255,255,.07)}
-.nav a.on{background:var(--rail-ink);color:var(--rail)}
+.nav a:hover{background:var(--rail-hover)}
+.nav a.on{background:var(--accent-soft);color:var(--ink);font-weight:700}
 .nav a.on svg{color:var(--accent);opacity:1}
 .nav svg{width:17px;height:17px;flex:none;opacity:.9}
 .main{min-width:0;padding-block:20px 48px;padding-left:max(16px,2.2vw);padding-right:max(16px,env(safe-area-inset-right,0px),2.2vw)}
@@ -121,9 +112,9 @@ tr.click{cursor:pointer} tr.click:hover td{background:var(--surface2)}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
 .wa{background:#E7FFDB;color:#10301A;border-radius:10px 10px 10px 2px;padding:10px 12px;font-size:13px;max-width:320px;box-shadow:0 1px 0 rgba(0,0,0,.08)}
 [style*="--display"]{font-weight:900;letter-spacing:-.02em}
-.who{background:rgba(255,255,255,.06);border-radius:10px;padding:10px;margin:0 0 6px}
+.who{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:10px;margin:0 0 6px}
 .who label{color:var(--rail-muted);display:block;margin-bottom:5px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
-.rolesel{width:100%;background:var(--rail);color:var(--rail-ink);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:7px 8px;font-weight:600}
+.rolesel{width:100%;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:7px 8px;font-weight:600}
 .whou{font-size:12px;color:var(--rail-muted);margin-top:6px}
 .priv{background:var(--info-bg);color:var(--info);border-radius:8px;padding:10px 12px;font-size:13px;display:flex;gap:8px;align-items:flex-start}
 .priv svg{width:18px;height:18px;flex:none;margin-top:1px}
@@ -199,6 +190,8 @@ const CAT = {
     cols:{'Boda · estudio':[7999,11499,14999,16999],'Boda · domicilio':[8999,12499,15999,17999],'XV · estudio':[8399,11999,15499,16999],'XV · domicilio':[9399,12999,15999,17999]}},
   renta:{nombre:'Renta de salones', desc:'Flexipass de horas · vigencia 3 meses · aparta con 50%', filas:['1 hora','4 horas','8 horas'],
     cols:{'Salón 32 m²':[275,250,225],'Salón 55 m²':[300,275,250],'Salón 70 m²':[350,300,275],'Salón 100 m²':[500,450,400]}, unidad:'/hora'},
+  ondemand:{nombre:'Azúcar en casa (videos)', desc:'Suscripción a clases grabadas · cobro automático recurrente · precios propuestos, por definir', filas:['Mensual','Trimestral','Anual'],
+    cols:{'Solo videos':[249,649,2290],'Socio Memberpass':[149,399,1390]}},
   cursos:{nombre:'Cursos para principiantes', desc:'8 sesiones presenciales · Bachata, Baile para fiestas, Cumbia, Salsa cubana, Salsa en línea', filas:['Preventa 3 (hasta 3 nov)','Precio regular'],
     cols:{'Individual':[749,1200],'Pareja':[1299,2400]}}
 };
@@ -559,18 +552,31 @@ V.campanas = () => {
   </div>`;
 };
 
+let SUSC = false;
 V.app = () => {
   const s=SOCIOS[0];
   let qr=''; seed=99; for(let y=0;y<21;y++)for(let x=0;x<21;x++){const f=(x<7&&y<7)||(x>13&&y<7)||(x<7&&y>13); const on=f?((x%6===0||y%6===0||x===20||y===20||(x>1&&x<5&&y>1&&y<5)||(x>15&&x<19&&y>1&&y<5)||(x>1&&x<5&&y>15&&y<19))&&!(x>13&&x<14)):rnd()<.48; if(on) qr+=`<rect x="${x}" y="${y}" width="1" height="1"/>`;}
+  const vids = [['Bachata','Paso básico y vueltas · Básico','24 min','Kevin M.',.6],['Salsa cubana','Guapea y dile que no · Básico','31 min','Ana Lucía T.',0],['Ritmos cubanos','Rumba guaguancó · Intermedio','42 min','Fernando V.',0],['Salsa en línea','Shines para practicar en casa','18 min','Kevin M.',0],['Baile para fiestas','Cumbia y merengue para la boda','27 min','Marco R.',0]];
+  const vidPhone = `<div class="phone"><div style="font-family:var(--display);font-size:26px">Azúcar en casa</div><div class="small muted">Clases grabadas para practicar donde sea</div>
+      ${SUSC ? `<div class="card" style="padding:10px;margin-top:10px"><div class="row"><span class="pill p-ok">Suscripción activa</span><span class="spacer"></span><span class="small muted">renueva 9 dic</span></div></div>`
+      : `<div class="card" style="padding:12px;margin-top:10px;background:var(--sugar)"><b>Todas las clases en video</b><div class="small" style="margin:4px 0 8px">Más de 120 clases de 9 ritmos, nuevas cada semana. Desde tu celular o tu tele.</div>
+          <div class="row" style="align-items:baseline"><span class="price">$249</span><span class="small muted">/mes · cancela cuando quieras</span></div>
+          <div class="small" style="margin-top:2px">Ya eres socio Memberpass: <b>$149/mes</b></div>
+          <button class="btn pri" id="suscribir" style="width:100%;margin-top:10px">Suscribirme por $149/mes</button></div>`}
+      <div class="tabs" style="margin:10px 0 4px">${['Todos','Bachata','Salsa','Ritmos cubanos','Aerial'].map((t,i)=>`<span class="tab small ${i===0?'on':''}">${t}</span>`).join('')}</div>
+      ${vids.map((v,i)=>`<div class="row" style="flex-wrap:nowrap;padding:7px 0;border-bottom:1px solid var(--line)"><div class="thumb" style="width:92px;flex:none;border-radius:6px;background:linear-gradient(135deg,${DCOL[v[0]]||'#141414'},#141414)"><span class="dur">${v[2]}</span>${SUSC||i===0?'':`<span class="seen" style="background:rgba(0,0,0,.6)">🔒</span>`}</div><div style="min-width:0"><b class="small">${v[0]}</b><div class="small muted">${v[1]}</div>${v[4]&&SUSC?`<div class="bar" style="margin-top:4px"><i style="width:${v[4]*100}%"></i></div>`:''}</div></div>`).join('')}
+      <div class="small muted" style="margin-top:8px">${SUSC?'Sigue donde te quedaste en cualquier dispositivo.':'La primera clase de cada ritmo es gratis.'}</div>
+    </div>`;
   return header('App del alumno','Así lo ve el alumno en su celular (PWA instalable, sin pasar por App Store)') + `
-  <div class="grid g3">
-    <div class="phone"><div class="small muted">Hola,</div><div style="font-family:var(--display);font-size:30px;line-height:1">${s.nombre.split(' ')[0]}</div>
+  <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center">
+    <div class="phone" style="margin:0"><div class="small muted">Hola,</div><div style="font-family:var(--display);font-size:30px;line-height:1">${s.nombre.split(' ')[0]}</div>
       <div class="card" style="margin-top:12px;padding:12px;text-align:center"><div class="small muted">Tu pase de acceso</div><svg class="qr" viewBox="-1 -1 23 23" fill="#151A36">${qr}</svg><div class="small">Rostro activo · también puedes usar este QR</div></div>
       <div class="card" style="margin-top:10px;padding:12px"><div class="small muted">Tu plan</div><b>Memberpass Social Dance 2x semana</b><div class="small">Venció 28 oct · <span style="color:var(--bad)">recargo 10% aplicado</span></div><button class="btn pri" style="width:100%;margin-top:8px">Pagar $857</button></div>
     </div>
     <div class="phone"><div style="font-family:var(--display);font-size:26px">Reservar clase</div>
       ${[['Hoy 19:00','Bachata · Portales','6 lugares'],['Mar 20:30','Salsa cubana · Portales','Lleno · lista de espera'],['Sáb 12:00','Salsa cubana · Portales','2 lugares'],['Sáb 10:30','RC Rumba & Son','12 lugares']].map(c=>`<div class="card" style="padding:10px;margin-top:8px"><div class="row"><div><b>${c[1]}</b><div class="small muted">${c[0]} · ${c[2]}</div></div><span class="spacer"></span><button class="btn small">${c[2].startsWith('Lleno')?'Esperar':'Reservar'}</button></div></div>`).join('')}
     </div>
+    ${vidPhone}
     <div class="phone"><div style="font-family:var(--display);font-size:26px">¿Cómo estuvo tu clase?</div>
       <div class="card" style="padding:12px;margin-top:8px"><b>Salsa cubana · Sáb 12:00</b><div class="small muted">con Fernando Valdez</div>
         <div class="stars" style="font-size:28px;margin:8px 0">★★★★★</div>
@@ -822,6 +828,7 @@ function render(){
   const co=$('#cobrar'); if(co) co.onclick=()=>toast('Venta registrada · recibo enviado por WhatsApp (ejemplo)');
   [['#nuevo','Formulario de alta: datos, foto de rostro y consentimiento (próxima fase)'],['#nlead','Alta de lead (próxima fase)'],['#ncamp','Editor de campañas (próxima fase)'],['#corte','Corte de caja generado (ejemplo)']].forEach(([s,t])=>{const e=$(s); if(e) e.onclick=()=>toast(t);});
   document.querySelectorAll('.phone .btn').forEach(b=>b.onclick=()=>toast('Acción de la app (ejemplo)'));
+  const su=$('#suscribir'); if(su) su.onclick=()=>{ SUSC=true; render(); toast('Suscripción activada · cobro recurrente a tu tarjeta (ejemplo)'); };
 }
 window.addEventListener('hashchange',()=>{ $('#layer').innerHTML=''; render(); window.scrollTo(0,0); });
 render();
