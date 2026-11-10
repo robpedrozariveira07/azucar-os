@@ -1,0 +1,23 @@
+# Datos personales: nunca al repositorio
+*.xlsx
+*.xls
+*.csv
+datos/
+exports/
+backups/
+
+# Entorno y secretos
+.env
+.env.*
+!.env.example
+
+# Sistema
+node_modules/
+.next/
+dist/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configuración local de Claude
+.claude/
