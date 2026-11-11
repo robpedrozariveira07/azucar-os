@@ -21,3 +21,6 @@ desktop.ini
 
 # Configuración local de Claude
 .claude/
+
+# Sistema real: repositorio privado aparte
+azucar-os-app/
